@@ -12,6 +12,22 @@
 
 >https://gist.github.com/mtr574/ef60d2417a9e3a42811a
 
+# Frontend deployment instructions:
+
+Install dependencies:
+>npm install http-server -g
+>npm install -g bower
+>bower install --save angular bootstrap jquery font-awesome angular-resource angular-translate
+
+Run server:
+>http-server
+
+Go to page:
+
+>http://localhost:8080/?userId=666
+
+
+
 
 # Contributors
 
@@ -20,3 +36,4 @@
 * Nir - Design & Front-end 
 
 )'(
+
