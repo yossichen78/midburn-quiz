@@ -14,9 +14,13 @@
 
 # Frontend deployment instructions:
 
-Install dependencies:
+Install http-server:
 >npm install http-server -g
+
+Install bower:
 >npm install -g bower
+
+Angular/Bootstrap etc:
 >bower install --save angular bootstrap jquery font-awesome angular-resource angular-translate
 
 Run server:
