@@ -1,80 +1,73 @@
-<div class="row" ng-controller="TemplateController" xmlns="http://www.w3.org/1999/html">
-    <div id="game-start-wrapper" class="well card">
+<div id="quiz-area" ng-controller="TemplateController" xmlns="http://www.w3.org/1999/html">
+    <!--<div id="game-start-wrapper" class="well card">-->
 
-        <div class="quiz-area" ng-show="inProgress">
-            <div class="-fluid">
-
-                    <div class="col">
-                        aaaaaa
-                    </div>
-                    <div class="col">
-                        BBBBB
-                    </div>
+    <div class="quiz-area" ng-show="inProgress">
 
 
-                <div ng-show="!quizOver">
-                    <div class="row">
-                        <div class="col" id="nav">
-                            <div class="container-fluid">
-                                <!-- active category-pagination, disabled category-pagination-->
-                                <ul>
-                                    <li ng-repeat="category in categories | reverse">
-                                        <div ng-switch on="category.category_completed">
+        <div ng-show="!quizOver">
+
+            <div class="col-lg-2 col-md-2" id="nav">
+                <div class="container-fluid">
+                    <!-- active category-pagination, disabled category-pagination-->
+                    <ul>
+                        <li ng-repeat="category in categories | reverse">
+                            <div ng-switch on="category.category_completed">
                                   <span class="btn-success btn-sm disabled"
                                         ng-switch-when="false">{{category.name}}</span>
-                                            <span class="btn-warning btn-sm disabled" ng-switch-default>{{category.name}}</span>
-                                        </div>
-                                    </li>
-                                </ul>
-
-                                </span>
+                                <span class="btn-warning btn-sm disabled" ng-switch-default>{{category.name}}</span>
                             </div>
-                            <!--</div>-->
-                        </div>
-                        <!-- Show question data (Text, number, category) -->
-                        <div id="questions" class="col">
-                            <h2>שאלה מספר: <span class="question-number">{{ qnumber }}</span></h2>
-                            <h2 id="question"> {{ question }} </h2>
-                            <div class="clearfix visible-lg visible-md visible-sm"></div>
-                            <ul class="list-group" id="options">
-                                <li class="list-group-item answer-option col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-10 col-sm-offset-0 col-xs-10 col-xs-offset-0 clearfix"
-                                    ng-click="checkAnswer($event)" ng-repeat="option in options|orderBy:random">
-                                    <label class="answer-option-label">
-                                        <input type="radio" name="answer" ng-model="checked" value="{{option.id}}">
-                                        {{ $index+1 }}. {{option.body}}
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
+
+                    </span>
                 </div>
             </div>
+            <!-- Show question data (Text, number, category) -->
+            <div id="questions" class="col-lg-8">
+                <h2>שאלה מספר: <span class="question-number">{{ qnumber }}</span></h2>
+                <h2 id="question"> {{ question }} </h2>
+
+                <ul class="list-group" id="options">
+                    <li class="list-group-item answer-option col-lg-5 col-md-5 col-sm-5  col-xs-8"
+                        ng-click="checkAnswer($event)" ng-repeat="option in options|orderBy:random">
+                        <label class="answer-option-label">
+                            <input type="radio" name="answer" ng-model="checked" value="{{option.id}}">
+                            {{ $index+1 }}. {{option.body}}
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
-        <!-- Helper buttons -->
-        <div class="row quiz-button-wrapper">
+        <div id="HelperBtnsArea" class="col-lg-5 col-md-7">
+            <!-- Helper buttons -->
+
             <div class="input-group-btn">
-                <button id="btnHint" class="game-btn center-block" ng-click="getHint()" ng-show="answerMode"
+                <button id="btnHint"  ng-click="getHint()" ng-show="answerMode"
                         ng-disabled="!checkCanGetHint()">
-                    חתוך 2 תשובות
+
                 </button>
-                <button id="btnSkip" class="game-btn center-block" ng-click="skipQuestion()" ng-show="answerMode">
-                    דלג
+                <button id="btnSkip" ng-click="skipQuestion()" ng-show="answerMode"
+                        ng-disabled="!checkCanSkipQuestion()">
                 </button>
             </div>
-        </div>
-        <div class="" ng-show="!inProgress">
-            <button class="game-btn center-block" id="startQuiz" ng-click="start()">{{ 'BTN_START_GAME' | translate }}
-            </button>
         </div>
     </div>
 
+    <div class="" ng-show="!inProgress">
+        <button class="game-btn center-block" id="startQuiz" ng-click="start()">{{ 'BTN_START_GAME' | translate }}
+        </button>
+    </div>
 
-    <footer>
-        <span class="logo col-xs-6"> © 2014-{{ CurrentYear }} Midburn // {{ ThemeName }}</span>
-        <ul class="links col-xs-6">
+
+    <footer >
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <span class="logo col-xs-6" style="margin-top: 10%"> © 2014-{{ CurrentYear }} Midburn // {{ ThemeName }}</span>
+        <ul class="links col-lg-12 col-md-12 col-sm-12 col-xs-6">
             <li ng-repeat="l in Links"><a class="{{l.Class}}" ng-href="{{l.Href}}" target="_blank">{{ l.Text }}</a></li>
         </ul>
+        </div>
     </footer>
 </div>
 
@@ -120,10 +113,5 @@
 
     // Hide correct answer alert
     $('#quiz-correct-answer-alert').toggle();
-
-
-
-
-
 
 </script>

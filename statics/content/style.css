@@ -49,12 +49,6 @@
 
 /* END FONTS */
 
-body {
-    margin: 10px auto;
-    text-align: center;
-    background: url(midburn-quiz-bg.png) no-repeat;
-    background-size: cover;
-}
 
 .lanEN {
     direction: ltr !important;
@@ -91,7 +85,10 @@ body {
 .link-special {
     color: #c9302c;
 }
+#quiz-area {
 
+
+}
 /* Intro */
 #intro {
     position: relative;
@@ -103,30 +100,27 @@ body {
 }
 
 .intro-wrapper {
-    margin: 40px 0 0;
+
 }
 
 /* Quizz */
 .quiz-area {
     direction: rtl !important;
-    margin: 40px auto;
+
+
 }
 .list-group-item {
-    margin-bottom: 2px;
+    margin-bottom: 1px;
 }
 .quiz-button-wrapper {
 /*     margin: 40px auto; */
+background-color: pink;
 }
 
 .category-pagination {
     z-index: 0;
 }
 
-.card {
-    max-width: 100%;
-    max-height: 100%;
-    margin: 2% auto;
-}
 
 .correct {
     background: greenyellow;
@@ -264,7 +258,7 @@ footer {
 }
 
 footer .links {
-    text-align: right;
+    text-align: left;
     list-style-type: none;
     direction: ltr !important;
 }
@@ -318,9 +312,13 @@ footer .logo {
 }
 #nav {
     position: relative;
-    display: inline-block;
+
     background: url(man-arms-up.jpg);
-    width:  20em;
+    width:  15em;
+    margin-left: 5em;
+    margin-top: 6em;
+    height: 100%;
+    display: inline;
 
 }
 
@@ -329,7 +327,36 @@ footer .logo {
 
 }
 #questions {
-    position: relative;
 
+
+}
+#options li{
+    height: 10%;
+    margin: 1%;
+    opacity: 0.4;
+}
+#HelperBtnsArea{
+
+    display: inline-block;
+}
+.lanHE{
+    margin-top: 0px;
+    background: url(bg.png) no-repeat center;
+}
+#btnHint{
+    background:url(remove-two-wrong-answers.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:100px;
+    height:100px;
+    position: relative;
+}
+#btnSkip{
+    background:url(remove-two-wrong-answers.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:100px;
+    height:100px;
+    position: relative;
 }
 /* END - Quiz is over page */

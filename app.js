@@ -147,8 +147,13 @@ app.directive('quiz', function (quizFactory, $http, config) {
                 });
             };
             scope.checkCanGetHint = function () {
+
                 return canGetHint;
             }
+            scope.checkCanSkipQuestion= function () {
+
+                            return canSkipQuestion;
+                        }
             scope.isCategoryCompleted = function(category) {
                 if (category.category_completed == true) {
                     return true;
@@ -171,7 +176,8 @@ app.directive('quiz', function (quizFactory, $http, config) {
                     var category = categories[i];
 
                         if (!scope.isCategoryCompleted(category)) {
-                            alert("not done " + category.name);
+                            alert("not done!!! " + category.name);
+                            alert(canSkipQuestion);
                             return category;
                         }
                         else {
@@ -244,8 +250,8 @@ app.directive('quiz', function (quizFactory, $http, config) {
                 canGetHint = false;
             };
             scope.skipQuestion = function () {
-                canSkipQuestion = false;
                 scope.nextQuestion();
+                canSkipQuestion = false;
 
             }
 
