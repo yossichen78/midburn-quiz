@@ -150,11 +150,16 @@ app.directive('quiz', function (quizFactory, $http, config) {
                 return canGetHint;
             }
             scope.isCategoryCompleted = function(category) {
+                if (category.category_completed == true) {
+                    return true;
+                }
                 if (correctStreak === numOfcurrectAnswerInStreak) {
                     correctStreak = 0;
+                     category.category_completed = true;
                     return true;
                 }
                 else {
+                    category.category_completed = false;
                     return false;
                 }
                 //return category.category_completed;
@@ -295,7 +300,7 @@ app.directive('quiz', function (quizFactory, $http, config) {
                     for (var i = 0; i < Window.game.categories.length; i++) {
                         var category = Window.game.categories[i];
                         if (category.name == categoryString) {
-                            category.category_completed = response.data.category_completed;
+                            //category.category_completed = response.data.category_completed;
 
                         }
                     }
@@ -453,5 +458,10 @@ app.controller('TemplateController', function ($scope) {
         {Text: "The Ten Principles", Href: "//midburn.org/en-ten-principles/", Class: ""}
     ];
 });
-
+// filter for reverse list
+app.filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };
+});
 // )'(

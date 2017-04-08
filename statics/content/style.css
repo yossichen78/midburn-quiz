@@ -316,38 +316,20 @@ footer .logo {
     background: rgba(0, 0, 0, 0.75);
     padding-top: 16%;
 }
-.categories-side-bar li{
-    filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083);  /* IE6,IE7 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)"; /* IE8 */
-    -moz-transform: rotate(-90.0deg);  /* FF3.5+ */
-    -ms-transform: rotate(-90.0deg);  /* IE9+ */
-    -o-transform: rotate(-90.0deg);  /* Opera 10.5 */
-    -webkit-transform: rotate(-90.0deg);  /* Safari 3.1+, Chrome */
-    transform: rotate(-90.0deg);
-    border-color: #0f0f0f;
+#nav {
+    position: relative;
+    display: inline-block;
+    background: url(man-arms-up.jpg);
+    width:  20em;
 
-    /*margin-bottom: 0em;*/
-    /*margin-top: 0px;*/
-    /*margin-right: 0em;*/
-    /*margin-left: 0em;*/
-
-    /*padding-right: 0em;*/
-    /*padding-bottom: 0em;*/
-    /*padding-left: 0em;*/
-    /*padding-top: 0em;*/
-
-
-
-    display: block;
 }
-.categories-side-bar ul li{
-    margin-top: 4em;
-    margin-bottom: 2em;
-    margin-left: 1em;
-    height: 4em;
-    width: 0em;
+
+#nav li{
+   margin-top: 5em;
+
 }
-[class^="col-lg-2 col-md-2 col-sm-2 col-xs-2"] { background-color: rgba(255, 0, 0, 0.3); }
+#questions {
+    position: relative;
 
-
+}
 /* END - Quiz is over page */
