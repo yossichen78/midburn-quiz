@@ -16,7 +16,7 @@
                 <div class="row no-gutter">
 
                     <div id="sidebar-wrapper" class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
-                        <h1 ng-repeat="category in categories | reverse" ng-class="{'category-done': category.category_completed}">{{ category.name }}</h1>
+                        <h1 class="category" ng-repeat="category in categories | reverse" ng-class="{'category-done': category.category_completed}">{{ category.name }}</h1>
                     </div>
                     <div id="zone" class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                         <h2 id="question"> {{ question }} </h2>
