@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
 <html ng-app="quizApp">
-  <head>
+<head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Midburn 2016 Quiz</title>
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
@@ -18,33 +19,31 @@
     <script src="bower_components/angular-translate/angular-translate.min.js"></script>
     <script src="config.js"></script>
     <script src="app.js"></script>
-  </head>
+</head>
 
-  <body class="lanHE">
-    <div class="midburn-logo"></div>
-    <div class="container card" ng-controller="quizInit" ng-init="Init()">
-      <div class="row">
+<body class="lanHE"  ng-controller="quizInit" ng-init="Init()" >
+
+<div id="main-page">
+
         <div id="intro" ng-controller="LangController">
 
-          <!-- Language support unavailable yet (You might help us workin it out :) ) -->
-          <div class="btn-group translate-buttons hidden">
-            <button class="btn-lang btn-en" ng-click="changeLanguage('en')">EN</button>
-            <button class="btn-lang btn-he" ng-click="changeLanguage('he')">HE</button>
-          </div>
+            <!-- Language support unavailable yet (You might help us workin it out :) ) -->
 
-          <div class="well game-intro">
-            <div class="intro-wrapper">
-                <h1>{{ 'TITLE' | translate }}</h1>
-                <p>{{ 'DESC' | translate }}</p>
+
+            <div class="well game-intro">
+                <div class="intro-wrapper">
+                    <h1>{{ 'TITLE' | translate }}</h1>
+                    <p>{{ 'DESC' | translate }}</p>
+                </div>
+                <a href="http://midburn.org/" target="_blank"><span>{{ 'INFO' | translate }}</span></a>
             </div>
-            <a href="http://midburn.org/" target="_blank"><span>{{ 'INFO' | translate }}</span></a>
-          </div>
         </div>
-      </div>
+        <!-- Quiz View -->
+        <quiz></quiz>
 
-      <!-- Quiz View -->
-      <quiz></quiz>
-    </div>
-  </body>
+
+
+</div>
+</body>
 
 </html>
